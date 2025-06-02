@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователи и заявки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4f8d8f;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-left, .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        nav a.active {
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        .flex-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .left-column, .right-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            margin: 5px 0 2px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        select[multiple] {
+            height: 100px;
+        }
+        .radio-group {
+            margin-bottom: 10px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #4f8d8f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        .table-footer {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .table-footer label {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-left">
+            <nav>
+                <a href="#" class="active">Пользователи и заявки</a>
+                <a href="#">Статистика</a>
+            </nav>
+        </div>
+        <div class="menu-right">
+            <span>Имя пользователя</span>
+            <a href="#" style="color: white; text-decoration: underline;">Выход</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="flex-section">
+            <div class="left-column">
+                <h1>Пользователи и статистика</h1>
+                <h2>Поиск</h2>
+                <label for="search-id">ID</label>
+                <input type="text" id="search-id" name="search-id">
+
+                <label for="search-name">Имя, фамилия</label>
+                <input type="text" id="search-name" name="search-name">
+
+                <h2>Номинации</h2>
+                <label for="nomination">Название номинации <small>(чтобы выбрать несколько, зажмите CTRL (CMD))</small></label>
+                <select id="nomination" name="nomination" multiple>
+                    <option>Номинация 1</option>
+                    <option>Номинация 2</option>
+                    <option>Номинация 3</option>
+                </select>
+            </div>
+
+            <div class="right-column">
+                <h1>Фильтры</h1>
+                <label for="status">Статус заявки <small>(чтобы выбрать несколько, зажмите CTRL (CMD))</small></label>
+                <select id="status" name="status" multiple>
+                    <option>Статус 1</option>
+                    <option>Статус 2</option>
+                    <option>Статус 3</option>
+                </select>
+
+                <div class="radio-group">
+                    <label>Заполнена анкета:</label>
+                    <label><input type="radio" name="form-fill" value="partial"> Частично</label>
+                    <label><input type="radio" name="form-fill" value="full"> Полностью</label>
+                </div>
+
+                <label for="region">Регион участия</label>
+                <select id="region" name="region">
+                    <option>Регион 1</option>
+                    <option>Регион 2</option>
+                    <option>Регион 3</option>
+                </select>
+
+                <button>Скачать данные по фильтру</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h1>Заявки участников</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Выбрать</th>
+                        <th>ID заявки</th>
+                        <th>Дата</th>
+                        <th>Текущий статус</th>
+                        <th>Участник</th>
+                        <th>Номинация</th>
+                        <th>Контактные данные</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>12345</td>
+                        <td>2025-06-01</td>
+                        <td>На рассмотрении</td>
+                        <td>Иванов Иван</td>
+                        <td>Номинация 1</td>
+                        <td>ivanov@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="table-footer">
+                <label for="actions">Действия с выбранными заявками:</label>
+                <select id="actions">
+                    <option>Отправить уведомление</option>
+                    <option>Изменить статус</option>
+                    <option>Удалить</option>
+                </select>
+                <button>Выполнить</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

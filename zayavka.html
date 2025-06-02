@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка ID 123</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4f8d8f;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-left, .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        nav a.active {
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .left-panel {
+            width: 70%;
+            padding-right: 20px;
+            overflow-y: auto;
+        }
+        .right-panel {
+            width: 30%;
+            position: sticky;
+            top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: fit-content;
+        }
+        .breadcrumb {
+            padding: 10px 20px;
+            background-color: #eee;
+        }
+        .breadcrumb button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #4f8d8f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            margin: 8px 0 4px;
+        }
+        input[type="number"], textarea, select {
+            width: 100%;
+            padding: 6px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .toggle-button {
+            padding: 6px 10px;
+            margin-bottom: 10px;
+            background-color: #4f8d8f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button.save {
+            background-color: #4f8d8f;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function toggleUserData() {
+            const userData = document.getElementById("user-data-details");
+            userData.classList.toggle("hidden");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="menu-left">
+            <nav>
+                <a href="#" class="active">Пользователи и заявки</a>
+                <a href="#">Статистика</a>
+            </nav>
+        </div>
+        <div class="menu-right">
+            <span>Имя пользователя</span>
+            <a href="#" style="color: white; text-decoration: underline;">Выход</a>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <span>Главная / Заявки / Заявка ID 123</span>
+        <button onclick="history.back()">Назад</button>
+    </div>
+
+    <div class="container">
+        <div class="left-panel">
+            <h1>Заявка ID 123</h1>
+
+            <h2>Данные пользователя</h2>
+            <button class="toggle-button" onclick="toggleUserData()">Развернуть</button>
+            <div id="user-data-details" class="hidden">
+                <p>ФИО: Иванов Иван Иванович</p>
+                <p>Email: ivanov@example.com</p>
+                <p>Телефон: +7 900 000-00-00</p>
+                <p>Регион: Москва</p>
+            </div>
+
+            <h2>Данные заявки</h2>
+            <label>Номинация:</label>
+            <p>Номинация 1</p>
+            <label>Описание:</label>
+            <p>Описание заявки, представленное участником...</p>
+        </div>
+
+        <div class="right-panel">
+            <h2>Оцените заявку по критериям</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Критерий</th>
+                        <th>Оценка (1–7)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Критерий 1</td><td><input type="number" min="1" max="7"></td></tr>
+                    <tr><td>Критерий 2</td><td><input type="number" min="1" max="7"></td></tr>
+                    <tr><td>Критерий 3</td><td><input type="number" min="1" max="7"></td></tr>
+                    <tr><td>Критерий 4</td><td><input type="number" min="1" max="7"></td></tr>
+                    <tr><td>Критерий 5</td><td><input type="number" min="1" max="7"></td></tr>
+                </tbody>
+            </table>
+
+            <label>Публичный комментарий:</label>
+            <textarea rows="4"></textarea>
+
+            <label>Комментарий для команды:</label>
+            <textarea rows="4"></textarea>
+
+            <label for="application-action">Действия с заявкой:</label>
+            <select id="application-action">
+                <option>Принять</option>
+                <option>Отклонить</option>
+                <option>Отправить на доработку</option>
+            </select>
+
+            <button class="save">Сохранить</button>
+        </div>
+    </div>
+</body>
+</html>

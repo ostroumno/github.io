@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статистика</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4f8d8f;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-left, .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .menu-left .logo {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: normal;
+        }
+        nav a.active {
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        label, .region-label {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            margin: 10px 0;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        .right-button {
+            float: right;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        tfoot td {
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleRegions() {
+            const regionBlock = document.getElementById('regions-list');
+            regionBlock.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="menu-left">
+            <span class="logo">ШУМ</span>
+            <nav>
+                <a href="#">Пользователи и заявки</a>
+                <a href="#" class="active">Статистика</a>
+            </nav>
+        </div>
+        <div class="menu-right">
+            <span>Пользователь</span>
+            <a href="#" style="color: white; text-decoration: underline;">Выход</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Статистика</h1>
+
+        <div class="section">
+            <h2>Регистрации</h2>
+            <table>
+                <tbody>
+                    <tr><td>Всего заявок:</td><td>XX</td></tr>
+                    <tr><td>Частично заполнили профиль:</td><td>XX</td></tr>
+                    <tr><td>Полностью заполнили профиль:</td><td>XX</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Регионы <button class="right-button" onclick="toggleRegions()">Развернуть</button></h2>
+            <div id="regions-list" class="hidden">
+                <span class="region-label">Регион 1</span>
+                <span class="region-label">Регион 2</span>
+                <span class="region-label">Регион 3</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Заявки по номинациям</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Статус 1</th>
+                        <th>Статус 2</th>
+                        <th>Статус 3</th>
+                        <th>Статус 4</th>
+                        <th>Статус 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Номинация 1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>Номинация 2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>Номинация 3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>Номинация 4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><td>Итого</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Конверсии</h2>
+            <label>Конверсия в заявку: XX%</label>
+            <label>Среднее количество заявок на пользователя: XX%</label>
+        </div>
+
+        <div class="section">
+            <h2>Работа экспертов</h2>
+            <label>В разработке</label>
+        </div>
+    </div>
+</body>
+</html>

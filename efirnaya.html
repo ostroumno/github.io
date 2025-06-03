@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Эфирная — Видеостудия</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #000;
+      font-family: sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #000;
+    }
+    .phone {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+    }
+    .phone a {
+      text-decoration: underline;
+      color: #000;
+      font-size: 0.9rem;
+    }
+    .hero {
+      height: 100vh;
+      background: url('video-placeholder-blur.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+    .cta-button {
+      padding: 0.75rem 1.5rem;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    section {
+      padding: 4rem 2rem;
+    }
+    .services, .why-us {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      flex: 1 1 300px;
+    }
+    .logos {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .logos div {
+      width: 100px;
+      height: 50px;
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    footer {
+      background: #e0e0e0;
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Эфирная</div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Главная</a></li>
+        <li><a href="#services">Что мы делаем</a></li>
+        <li><a href="#why">Почему мы</a></li>
+        <li><a href="#tech">Технические возможности</a></li>
+        <li><a href="#cases">Кейсы</a></li>
+        <li><a href="#pricing">Услуги и стоимость</a></li>
+        <li><a href="#contact">Свяжитесь с нами</a></li>
+      </ul>
+    </nav>
+    <div class="phone">
+      <div>+7 962 356 12 51</div>
+      <a href="https://yandex.ru/maps/-/CDRZxND2" target="_blank">м. Арбатская</a>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <h1>Нужно крутое видео? Еще вчера? <br>Мы поможем.</h1>
+    <p>Когда хорошее видео нужно быстро и по адекватной цене</p>
+    <p>Видео под ключ — без стресса, бесконечных правок и технических заморочек</p>
+    <button class="cta-button">Забронировать</button>
+  </section>
+
+  <section id="services">
+    <h2>Видео, которое решает задачи. Быстро и эффективно.</h2>
+    <p>От обучающих курсов до HR-бренда — создаём контент, который действительно работает на вас</p>
+    <div class="services">
+      <div class="card">
+        <h3>Онлайн-трансляции</h3>
+        <p>Прямые эфиры и вебинары, интерактивные включения</p>
+      </div>
+      <div class="card">
+        <h3>Видеокурсы</h3>
+        <p>Полный цикл, корпоративные и госпрограммы, МСБ</p>
+      </div>
+      <div class="card">
+        <h3>HR-видео</h3>
+        <p>Культура, рекрутинг, узнаваемость, истории сотрудников</p>
+      </div>
+      <div class="card">
+        <h3>Подкасты и интервью</h3>
+        <p>Внутренние и внешние интервью, подкасты</p>
+      </div>
+    </div>
+    <p>С нами сотрудничают:</p>
+    <div class="logos">
+      <div>Логотип 1</div>
+      <div>Логотип 2</div>
+      <div>Логотип 3</div>
+    </div>
+    <button class="cta-button">Обсудить проект</button>
+  </section>
+
+  <section id="why">
+    <h2>Наша цель - решить задачу вашей организации так, чтобы этим было удобно пользоваться</h2>
+    <div class="why-us">
+      <div class="card">Быстро — без потери качества и в сжатые сроки</div>
+      <div class="card">Красиво — топовое оборудование и специалисты</div>
+      <div class="card">Погружаемся в детали — пишем сценарии, учитываем специфику</div>
+      <div class="card">Работаем с тендерами — знаем оформление, без бюрократии</div>
+    </div>
+    <p>Сделаем так, чтобы ваше видео решало задачи — легко, эффектно и в срок.</p>
+    <button class="cta-button">Отправить запрос</button>
+  </section>
+
+  <section id="tech">
+    <h2>Наши технические возможности</h2>
+    <ul>
+      <li>Собственная студия в центре Москвы</li>
+      <li>Площадки под трансляции</li>
+      <li>Съёмки 8K, 360°, хромакей</li>
+      <li>Анимация, авторский саундтрек</li>
+    </ul>
+    <button class="cta-button">Начать сейчас</button>
+    <button class="cta-button">Показать техническое оснащение</button>
+  </section>
+
+  <section id="cases">
+    <h2>Кейсы</h2>
+    <p>Курсы: Росатом, Профессионалитет, НТИ</p>
+    <p>Интервью: Топ-менеджеры, Хлебникова</p>
+    <button class="cta-button">Получить презентацию</button>
+  </section>
+
+  <section id="pricing">
+    <h2>Услуги и стоимость</h2>
+    <img src="screenshot.jpg" alt="Скриншот с ценами" style="max-width:100%;">
+  </section>
+
+  <section id="contact" class="form-section">
+    <h2>Готовы начать? Давайте обсудим.</h2>
+    <form>
+      <input type="text" placeholder="Имя">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Опишите задачу"></textarea>
+      <button class="cta-button" type="submit">Получить предложение за 24 часа</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Эфирная. Все права защищены.</p>
+  </footer>
+</body>
+</html>
